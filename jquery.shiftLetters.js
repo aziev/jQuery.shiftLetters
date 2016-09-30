@@ -12,12 +12,14 @@
         return this.each(function() {
 
             var letters = $(this).text().trim().split('');
-            var $container = $('<div/>').css('height', '1em');
+            var $container = $('<div/>');
             var $this = $(this);
 
             $(letters).each(function(index){
 
-                if (this[0] == ' ')
+                var letter = this[0];
+
+                if (letter == ' ')
                 {
                     $container.append(' ');
                     return;
@@ -37,7 +39,7 @@
                 });
 
                 $('<i/>', {
-                    text: this[0],
+                    text: letter,
                 }).css({
                     fontStyle: 'normal',
                     position: 'relative',
@@ -46,18 +48,24 @@
                     top: offset - 1 + 'em',
                 }, {
                     duration: settings.duration,
-                    easing: settings.easing,//'easeOutQuint',
+                    easing: settings.easing,
                 });
 
                 $mask.appendTo($container);
 
-                // setTimeout(function(){
-                //     $this.text(letters.join(''));
-                // }, 900);
-
             });
 
             $(this).html($container);
+
+            var lettersHeight = $container.find('i').eq(0).outerHeight();
+
+            $container.css({
+                height: lettersHeight,
+            });
+
+            setTimeout(function(){
+                $this.text(letters.join(''));
+            }, settings.duration + 100);
 
         });
 
