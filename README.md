@@ -2,6 +2,10 @@
 
 This is the jQuery plugin which adds shift-letter animation to element.
 
+## Demo
+
+![demo](https://raw.githubusercontent.com/aziev/jQuery.shiftLetters/master/demo.gif)
+
 ## Usage
 
 Asset jQuery to your page:
