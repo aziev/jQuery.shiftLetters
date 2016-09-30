@@ -1,11 +1,12 @@
 ;(function ($) {
 
-    $.fn.amrShiftLetters = function (options) {
+    $.fn.shiftLetters = function (options) {
 
         var settings = $.extend({
             minOffset: 2,
             maxOffset: 5,
             easing: 'swing',
+            duration: 800,
         }, options);
 
         return this.each(function() {
@@ -40,19 +41,19 @@
                 }).css({
                     fontStyle: 'normal',
                     position: 'relative',
-                    top: (index % 2 ? -1 : maskHeight+1) + 'em',
+                    top: (index % 2 ? -2 : maskHeight+2) + 'em',
                 }).appendTo($mask).delay(100).animate({
                     top: offset - 1 + 'em',
                 }, {
-                    duration: 800,
+                    duration: settings.duration,
                     easing: settings.easing,//'easeOutQuint',
                 });
 
                 $mask.appendTo($container);
 
-                setTimeout(function(){
-                    $this.text(letters.join(''));
-                }, 900);
+                // setTimeout(function(){
+                //     $this.text(letters.join(''));
+                // }, 900);
 
             });
 

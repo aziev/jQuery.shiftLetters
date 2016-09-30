@@ -2,10 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Demo of Amr Shift Letters</title>
+    <title>Demo of ShiftLetters</title>
     <style>
+        html, body, .container{
+            height: 100%;
+        }
+        body{
+            margin: 0;
+        }
+        .container{
+            display: table;
+            width: 100%;
+        }
         h1{
-            margin: 3em 0;
+            display: table-cell;
+            vertical-align: middle;
+            /*margin: 3em 0;*/
             text-align: center;
             font: 900 72px arial;
             color: #333;
@@ -13,14 +25,17 @@
     </style>
 </head>
 <body>
-    <h1>Amr Shift Letters</h1>
+
+    <div class="container">
+        <h1>Amazing ShiftLetters</h1>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="jquery.amrShiftLetters.js"></script>
     <script>
         $(document).ready(function(){
 
-            $('h1').amrShiftLetters();
+            $('h1').shiftLetters();
 
         });
     </script>
