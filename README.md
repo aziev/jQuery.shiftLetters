@@ -42,6 +42,15 @@ $('#heading').shiftLetters({
     easing: 'linear'
 });
 ```
+If you want use more easing functions you need load the [jQuery easing plugin](http://gsgd.co.uk/sandbox/jquery/easing/):
+```
+<script src="/path/to/jquery.easing.js"></script>
+```
+```
+$('#heading').shiftLetters({
+    easing: 'easeOutBounce'
+});
+```
 
 **minOffset**, **maxOffset**: sets the minimum and maximum offset of letters start position (default: from 2 to 5).
 ```
